@@ -119,6 +119,7 @@ Cada cámara tiene un sensor **Fotos de hoy**, con la última foto, sus etiqueta
    Cámara del iPhone: te ofrecerá abrir freedomCam.
 
 Si no tienes Home Assistant a mano, toca **Escribirlo a mano** y rellena proveedor, bucket y claves.
+Para curiosear antes, **Probar la demo** enseña una semana de fotos inventadas; *Salir* en su aviso te devuelve al inicio.
 
 <p>
 <img src="images/app-welcome-es.jpg" width="240" alt="Pantalla de bienvenida">

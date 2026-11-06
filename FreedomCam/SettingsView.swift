@@ -117,7 +117,7 @@ struct SettingsView: View {
                 }
             }
         }
-        .onAppear { config = model.config }
+        .onAppear { config = model.config.demo ? StorageConfig() : model.config }
         .task { cacheBytes = await ImageCache.shared.diskBytes() }
     }
 

@@ -16,7 +16,8 @@ struct ContentView: View {
                     if model.config.isComplete {
                         gallery
                     } else {
-                        WelcomeView(scan: { showScanner = true }, manual: { showSettings = true })
+                        WelcomeView(scan: { showScanner = true }, manual: { showSettings = true },
+                                    demo: { model.updateConfig(.demoConfig) })
                             .frame(maxHeight: .infinity)
                     }
                 }
@@ -46,8 +47,9 @@ struct ContentView: View {
         .task(id: model.selectedDay) { await model.reload() }
         .task(id: model.config) { await model.reload() }
         #if DEBUG
-        // For screenshots: SIMCTL_CHILD_FC_SCREEN=settings | calendar | viewer
+        // For screenshots: SIMCTL_CHILD_FC_SCREEN=settings | calendar | viewer, SIMCTL_CHILD_FC_FILTER=people
         .onAppear {
+            if ProcessInfo.processInfo.environment["FC_FILTER"] == "people" { model.labelFilter = .personas }
             switch ProcessInfo.processInfo.environment["FC_SCREEN"] {
             case "settings": showSettings = true
             case "calendar": showCalendar = true
@@ -63,9 +65,19 @@ struct ContentView: View {
         #endif
     }
 
+    /// DEBUG only: App Store screenshots show the gallery as it looks with a real bucket.
+    private static var hideDemoBanner: Bool {
+        #if DEBUG
+        ProcessInfo.processInfo.environment["FC_NOBANNER"] == "1"
+        #else
+        false
+        #endif
+    }
+
     private var gallery: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 12) {
+                if model.config.demo && !Self.hideDemoBanner { DemoBanner() }
                 DayHeader()
                 DayStrip()
                 CameraChips()
@@ -329,6 +341,7 @@ struct CalendarSheet: View {
 struct WelcomeView: View {
     let scan: () -> Void
     let manual: () -> Void
+    let demo: () -> Void
 
     var body: some View {
         VStack(spacing: 18) {
@@ -349,7 +362,38 @@ struct WelcomeView: View {
             .buttonStyle(.plain)
             Button("Enter it manually", action: manual)
                 .font(.subheadline.weight(.semibold))
+            Button(action: demo) {
+                Label("Try the demo", systemImage: "play.circle")
+            }
+            .font(.subheadline.weight(.semibold))
+            .foregroundStyle(.secondary)
+            .padding(.top, 6)
         }
         .padding()
+    }
+}
+
+// MARK: - Demo
+
+struct DemoBanner: View {
+    @Environment(GalleryModel.self) private var model
+
+    var body: some View {
+        HStack(spacing: 10) {
+            Text("🎬").font(.title3)
+            VStack(alignment: .leading, spacing: 1) {
+                Text("Demo mode").font(.subheadline.weight(.heavy))
+                Text("Made-up photos. Connect your bucket to see yours.").font(.caption).foregroundStyle(.secondary)
+            }
+            Spacer(minLength: 4)
+            Button("Exit") { model.updateConfig(StorageConfig()) }
+                .font(.subheadline.weight(.bold))
+                .buttonStyle(.borderedProminent)
+                .buttonBorderShape(.capsule)
+                .controlSize(.small)
+        }
+        .padding(.horizontal, 14).padding(.vertical, 10)
+        .background(RoundedRectangle(cornerRadius: 16, style: .continuous).fill(.background.opacity(0.85)))
+        .padding(.horizontal)
     }
 }

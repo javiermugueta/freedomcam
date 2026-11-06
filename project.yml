@@ -15,7 +15,12 @@ targets:
     type: application
     platform: iOS
     sources:
-      - FreedomCam
+      - path: FreedomCam
+        excludes:
+          - Demo
+      - path: FreedomCam/Demo
+        type: folder
+        buildPhase: resources
     info:
       path: FreedomCam/Info.plist
       properties:

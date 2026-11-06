@@ -77,3 +77,10 @@
 "Scan the code from Home Assistant" = "Escanear el código de Home Assistant";
 "Enter it manually" = "Escribirlo a mano";
 "In Home Assistant: freedomCam → options → read-only keys for the app. The QR code appears in the integration." = "En Home Assistant: freedomCam → opciones → claves de solo lectura para la app. El código QR aparece en la integración.";
+"Try the demo" = "Probar la demo";
+"Demo mode" = "Modo demo";
+"Made-up photos. Connect your bucket to see yours." = "Fotos inventadas. Conecta tu bucket para ver las tuyas.";
+"Exit" = "Salir";
+"Driveway" = "Entrada";
+"Garden" = "Jardín";
+"Hall" = "Recibidor";

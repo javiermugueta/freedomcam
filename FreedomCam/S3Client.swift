@@ -32,6 +32,7 @@ struct S3Client {
 
     /// Lista todo lo que hay bajo `prefix` (sigue la paginación). Con `delimiter` devuelve las "carpetas" en `prefixes`.
     func list(prefix: String, delimiter: String? = nil) async throws -> ListResult {
+        if config.demo { return DemoBucket.list(prefix: prefix, delimiter: delimiter) }
         var resultado = ListResult()
         var continuacion: String?
         repeat {
@@ -49,7 +50,8 @@ struct S3Client {
     }
 
     func object(key: String) async throws -> Data {
-        try await send(key: key, query: [])
+        if config.demo { return try DemoBucket.object(key: key) }
+        return try await send(key: key, query: [])
     }
 
     /// The object, or nil if it does not exist (indexes and the manifest are optional).

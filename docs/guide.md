@@ -120,6 +120,7 @@ Each camera gets a **Photos today** sensor, with the last photo, its labels and 
    iPhone Camera app: it offers to open freedomCam.
 
 Without Home Assistant at hand, tap **Enter it manually** and fill in the provider, bucket and keys.
+To look around first, **Try the demo** shows a week of made-up photos; *Exit* in its banner goes back.
 
 <p>
 <img src="images/app-welcome-en.jpg" width="240" alt="Welcome screen">

@@ -125,4 +125,24 @@ final class FreedomCamTests: XCTestCase {
         XCTAssertNil(ConnectionCode.parse("https://example.com"))
         XCTAssertNil(ConnectionCode.parse("freedomcam://connect?c=basura"))
     }
+
+    /// The demo bucket answers like a real one: manifest, indexes, photos and thumbnails, nothing in the future.
+    func testModoDemo() throws {
+        let tarde = Calendar.current.date(bySettingHour: 23, minute: 59, second: 0, of: Date())!
+        let raiz = DemoBucket.list(prefix: "", delimiter: "/", now: tarde)
+        XCTAssertEqual(Set(raiz.prefixes.map { String($0.dropLast()) }.filter(GalleryModel.isCamera)),
+                       ["driveway", "garden", "hall"])
+        let manifiesto = try JSONDecoder().decode(Manifest.self, from: DemoBucket.object(key: Manifest.key, now: tarde))
+        XCTAssertEqual(manifiesto.cameras?.count, 3)
+        let hoy = try JSONDecoder().decode(DayIndex.self, from: DemoBucket.object(key: DayIndex.key(tarde), now: tarde))
+        XCTAssertFalse(hoy.photos.isEmpty)
+        let foto = try XCTUnwrap(hoy.parsed.first)
+        XCTAssertGreaterThan(try DemoBucket.object(key: foto.key, now: tarde).count, 10_000)
+        XCTAssertLessThan(try DemoBucket.object(key: try XCTUnwrap(foto.thumb), now: tarde).count, 30_000)
+
+        let madrugada = Calendar.current.date(bySettingHour: 0, minute: 1, second: 0, of: Date())!
+        let temprano = try? DemoBucket.object(key: DayIndex.key(madrugada), now: madrugada)
+        XCTAssertNil(temprano)                                   // at 00:01 there are no photos of today yet
+        XCTAssertTrue(StorageConfig.demoConfig.isComplete)
+    }
 }

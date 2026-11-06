@@ -10,6 +10,7 @@ enum SettingsStore {
         #if DEBUG
         // For simulator tests: SIMCTL_CHILD_R2_ENDPOINT, ..._BUCKET, ..._KEY_ID, ..._SECRET
         let env = ProcessInfo.processInfo.environment
+        if env["FC_DEMO"] == "1" { return .demoConfig }
         if let endpoint = env["R2_ENDPOINT"], let bucket = env["R2_BUCKET"], let id = env["R2_KEY_ID"],
            let secret = env["R2_SECRET"] {
             var c = StorageConfig(provider: .other, endpoint: endpoint, bucket: bucket, accessKeyId: id,

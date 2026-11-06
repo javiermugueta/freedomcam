@@ -1,0 +1,582 @@
+{
+ "cameras": [
+  {
+   "id": "driveway",
+   "kind": "outdoor"
+  },
+  {
+   "id": "garden",
+   "kind": "outdoor"
+  },
+  {
+   "id": "hall",
+   "kind": "indoor"
+  }
+ ],
+ "photos": [
+  {
+   "offset": 0,
+   "camera": "garden",
+   "time": "175459",
+   "labels": [],
+   "file": "d0_garden_175459.jpg",
+   "thumb": "d0_garden_175459_t.jpg"
+  },
+  {
+   "offset": 0,
+   "camera": "hall",
+   "time": "164039",
+   "labels": [
+    "person"
+   ],
+   "file": "d0_hall_164039.jpg",
+   "thumb": "d0_hall_164039_t.jpg"
+  },
+  {
+   "offset": 0,
+   "camera": "garden",
+   "time": "090534",
+   "labels": [
+    "dog",
+    "person"
+   ],
+   "file": "d0_garden_090534.jpg",
+   "thumb": "d0_garden_090534_t.jpg"
+  },
+  {
+   "offset": 0,
+   "camera": "driveway",
+   "time": "070212",
+   "labels": [
+    "person"
+   ],
+   "file": "d0_driveway_070212.jpg",
+   "thumb": "d0_driveway_070212_t.jpg"
+  },
+  {
+   "offset": 0,
+   "camera": "hall",
+   "time": "104018",
+   "labels": [
+    "dog"
+   ],
+   "file": "d0_hall_104018.jpg",
+   "thumb": "d0_hall_104018_t.jpg"
+  },
+  {
+   "offset": 0,
+   "camera": "garden",
+   "time": "191726",
+   "labels": [
+    "dog"
+   ],
+   "file": "d0_garden_191726.jpg",
+   "thumb": "d0_garden_191726_t.jpg"
+  },
+  {
+   "offset": 0,
+   "camera": "garden",
+   "time": "070436",
+   "labels": [
+    "car"
+   ],
+   "file": "d0_garden_070436.jpg",
+   "thumb": "d0_garden_070436_t.jpg"
+  },
+  {
+   "offset": 0,
+   "camera": "driveway",
+   "time": "073024",
+   "labels": [
+    "dog",
+    "person"
+   ],
+   "file": "d0_driveway_073024.jpg",
+   "thumb": "d0_driveway_073024_t.jpg"
+  },
+  {
+   "offset": 0,
+   "camera": "garden",
+   "time": "072648",
+   "labels": [
+    "car"
+   ],
+   "file": "d0_garden_072648.jpg",
+   "thumb": "d0_garden_072648_t.jpg"
+  },
+  {
+   "offset": 0,
+   "camera": "hall",
+   "time": "171228",
+   "labels": [
+    "dog"
+   ],
+   "file": "d0_hall_171228.jpg",
+   "thumb": "d0_hall_171228_t.jpg"
+  },
+  {
+   "offset": 0,
+   "camera": "garden",
+   "time": "192407",
+   "labels": [],
+   "file": "d0_garden_192407.jpg",
+   "thumb": "d0_garden_192407_t.jpg"
+  },
+  {
+   "offset": 0,
+   "camera": "hall",
+   "time": "125601",
+   "labels": [
+    "person"
+   ],
+   "file": "d0_hall_125601.jpg",
+   "thumb": "d0_hall_125601_t.jpg"
+  },
+  {
+   "offset": 1,
+   "camera": "hall",
+   "time": "180602",
+   "labels": [
+    "person"
+   ],
+   "file": "d1_hall_180602.jpg",
+   "thumb": "d1_hall_180602_t.jpg"
+  },
+  {
+   "offset": 1,
+   "camera": "garden",
+   "time": "074939",
+   "labels": [
+    "car",
+    "person"
+   ],
+   "file": "d1_garden_074939.jpg",
+   "thumb": "d1_garden_074939_t.jpg"
+  },
+  {
+   "offset": 1,
+   "camera": "hall",
+   "time": "160837",
+   "labels": [
+    "dog"
+   ],
+   "file": "d1_hall_160837.jpg",
+   "thumb": "d1_hall_160837_t.jpg"
+  },
+  {
+   "offset": 1,
+   "camera": "garden",
+   "time": "094009",
+   "labels": [
+    "car",
+    "person"
+   ],
+   "file": "d1_garden_094009.jpg",
+   "thumb": "d1_garden_094009_t.jpg"
+  },
+  {
+   "offset": 1,
+   "camera": "driveway",
+   "time": "140306",
+   "labels": [
+    "car"
+   ],
+   "file": "d1_driveway_140306.jpg",
+   "thumb": "d1_driveway_140306_t.jpg"
+  },
+  {
+   "offset": 1,
+   "camera": "hall",
+   "time": "161833",
+   "labels": [
+    "person"
+   ],
+   "file": "d1_hall_161833.jpg",
+   "thumb": "d1_hall_161833_t.jpg"
+  },
+  {
+   "offset": 1,
+   "camera": "driveway",
+   "time": "163541",
+   "labels": [
+    "dog"
+   ],
+   "file": "d1_driveway_163541.jpg",
+   "thumb": "d1_driveway_163541_t.jpg"
+  },
+  {
+   "offset": 1,
+   "camera": "driveway",
+   "time": "122628",
+   "labels": [
+    "person"
+   ],
+   "file": "d1_driveway_122628.jpg",
+   "thumb": "d1_driveway_122628_t.jpg"
+  },
+  {
+   "offset": 2,
+   "camera": "driveway",
+   "time": "162142",
+   "labels": [
+    "dog",
+    "person"
+   ],
+   "file": "d2_driveway_162142.jpg",
+   "thumb": "d2_driveway_162142_t.jpg"
+  },
+  {
+   "offset": 2,
+   "camera": "garden",
+   "time": "070138",
+   "labels": [
+    "dog",
+    "person"
+   ],
+   "file": "d2_garden_070138.jpg",
+   "thumb": "d2_garden_070138_t.jpg"
+  },
+  {
+   "offset": 2,
+   "camera": "garden",
+   "time": "200257",
+   "labels": [
+    "dog",
+    "person"
+   ],
+   "file": "d2_garden_200257.jpg",
+   "thumb": "d2_garden_200257_t.jpg"
+  },
+  {
+   "offset": 2,
+   "camera": "driveway",
+   "time": "163600",
+   "labels": [
+    "dog"
+   ],
+   "file": "d2_driveway_163600.jpg",
+   "thumb": "d2_driveway_163600_t.jpg"
+  },
+  {
+   "offset": 2,
+   "camera": "driveway",
+   "time": "190716",
+   "labels": [],
+   "file": "d2_driveway_190716.jpg",
+   "thumb": "d2_driveway_190716_t.jpg"
+  },
+  {
+   "offset": 2,
+   "camera": "hall",
+   "time": "162829",
+   "labels": [
+    "dog"
+   ],
+   "file": "d2_hall_162829.jpg",
+   "thumb": "d2_hall_162829_t.jpg"
+  },
+  {
+   "offset": 3,
+   "camera": "driveway",
+   "time": "123805",
+   "labels": [],
+   "file": "d3_driveway_123805.jpg",
+   "thumb": "d3_driveway_123805_t.jpg"
+  },
+  {
+   "offset": 3,
+   "camera": "hall",
+   "time": "195831",
+   "labels": [],
+   "file": "d3_hall_195831.jpg",
+   "thumb": "d3_hall_195831_t.jpg"
+  },
+  {
+   "offset": 3,
+   "camera": "driveway",
+   "time": "131909",
+   "labels": [
+    "dog",
+    "person"
+   ],
+   "file": "d3_driveway_131909.jpg",
+   "thumb": "d3_driveway_131909_t.jpg"
+  },
+  {
+   "offset": 3,
+   "camera": "garden",
+   "time": "191612",
+   "labels": [
+    "dog",
+    "person"
+   ],
+   "file": "d3_garden_191612.jpg",
+   "thumb": "d3_garden_191612_t.jpg"
+  },
+  {
+   "offset": 3,
+   "camera": "driveway",
+   "time": "090831",
+   "labels": [
+    "car",
+    "person"
+   ],
+   "file": "d3_driveway_090831.jpg",
+   "thumb": "d3_driveway_090831_t.jpg"
+  },
+  {
+   "offset": 3,
+   "camera": "driveway",
+   "time": "142440",
+   "labels": [
+    "dog"
+   ],
+   "file": "d3_driveway_142440.jpg",
+   "thumb": "d3_driveway_142440_t.jpg"
+  },
+  {
+   "offset": 3,
+   "camera": "garden",
+   "time": "085302",
+   "labels": [
+    "car",
+    "person"
+   ],
+   "file": "d3_garden_085302.jpg",
+   "thumb": "d3_garden_085302_t.jpg"
+  },
+  {
+   "offset": 3,
+   "camera": "driveway",
+   "time": "190825",
+   "labels": [],
+   "file": "d3_driveway_190825.jpg",
+   "thumb": "d3_driveway_190825_t.jpg"
+  },
+  {
+   "offset": 4,
+   "camera": "driveway",
+   "time": "190728",
+   "labels": [
+    "car"
+   ],
+   "file": "d4_driveway_190728.jpg",
+   "thumb": "d4_driveway_190728_t.jpg"
+  },
+  {
+   "offset": 4,
+   "camera": "garden",
+   "time": "121145",
+   "labels": [
+    "car"
+   ],
+   "file": "d4_garden_121145.jpg",
+   "thumb": "d4_garden_121145_t.jpg"
+  },
+  {
+   "offset": 4,
+   "camera": "hall",
+   "time": "203332",
+   "labels": [
+    "dog"
+   ],
+   "file": "d4_hall_203332.jpg",
+   "thumb": "d4_hall_203332_t.jpg"
+  },
+  {
+   "offset": 4,
+   "camera": "hall",
+   "time": "100526",
+   "labels": [
+    "dog"
+   ],
+   "file": "d4_hall_100526.jpg",
+   "thumb": "d4_hall_100526_t.jpg"
+  },
+  {
+   "offset": 4,
+   "camera": "garden",
+   "time": "104056",
+   "labels": [
+    "car"
+   ],
+   "file": "d4_garden_104056.jpg",
+   "thumb": "d4_garden_104056_t.jpg"
+  },
+  {
+   "offset": 5,
+   "camera": "driveway",
+   "time": "084655",
+   "labels": [
+    "dog",
+    "person"
+   ],
+   "file": "d5_driveway_084655.jpg",
+   "thumb": "d5_driveway_084655_t.jpg"
+  },
+  {
+   "offset": 5,
+   "camera": "garden",
+   "time": "205401",
+   "labels": [
+    "car",
+    "person"
+   ],
+   "file": "d5_garden_205401.jpg",
+   "thumb": "d5_garden_205401_t.jpg"
+  },
+  {
+   "offset": 5,
+   "camera": "garden",
+   "time": "210211",
+   "labels": [
+    "dog"
+   ],
+   "file": "d5_garden_210211.jpg",
+   "thumb": "d5_garden_210211_t.jpg"
+  },
+  {
+   "offset": 5,
+   "camera": "hall",
+   "time": "175343",
+   "labels": [
+    "dog"
+   ],
+   "file": "d5_hall_175343.jpg",
+   "thumb": "d5_hall_175343_t.jpg"
+  },
+  {
+   "offset": 5,
+   "camera": "hall",
+   "time": "084814",
+   "labels": [
+    "dog"
+   ],
+   "file": "d5_hall_084814.jpg",
+   "thumb": "d5_hall_084814_t.jpg"
+  },
+  {
+   "offset": 5,
+   "camera": "garden",
+   "time": "203540",
+   "labels": [
+    "person"
+   ],
+   "file": "d5_garden_203540.jpg",
+   "thumb": "d5_garden_203540_t.jpg"
+  },
+  {
+   "offset": 5,
+   "camera": "hall",
+   "time": "101954",
+   "labels": [
+    "person"
+   ],
+   "file": "d5_hall_101954.jpg",
+   "thumb": "d5_hall_101954_t.jpg"
+  },
+  {
+   "offset": 5,
+   "camera": "garden",
+   "time": "183112",
+   "labels": [],
+   "file": "d5_garden_183112.jpg",
+   "thumb": "d5_garden_183112_t.jpg"
+  },
+  {
+   "offset": 5,
+   "camera": "driveway",
+   "time": "170233",
+   "labels": [],
+   "file": "d5_driveway_170233.jpg",
+   "thumb": "d5_driveway_170233_t.jpg"
+  },
+  {
+   "offset": 6,
+   "camera": "driveway",
+   "time": "085934",
+   "labels": [],
+   "file": "d6_driveway_085934.jpg",
+   "thumb": "d6_driveway_085934_t.jpg"
+  },
+  {
+   "offset": 6,
+   "camera": "driveway",
+   "time": "163108",
+   "labels": [
+    "car",
+    "person"
+   ],
+   "file": "d6_driveway_163108.jpg",
+   "thumb": "d6_driveway_163108_t.jpg"
+  },
+  {
+   "offset": 6,
+   "camera": "driveway",
+   "time": "120844",
+   "labels": [
+    "car"
+   ],
+   "file": "d6_driveway_120844.jpg",
+   "thumb": "d6_driveway_120844_t.jpg"
+  },
+  {
+   "offset": 6,
+   "camera": "driveway",
+   "time": "183106",
+   "labels": [],
+   "file": "d6_driveway_183106.jpg",
+   "thumb": "d6_driveway_183106_t.jpg"
+  },
+  {
+   "offset": 6,
+   "camera": "garden",
+   "time": "201244",
+   "labels": [
+    "dog"
+   ],
+   "file": "d6_garden_201244.jpg",
+   "thumb": "d6_garden_201244_t.jpg"
+  },
+  {
+   "offset": 6,
+   "camera": "driveway",
+   "time": "171355",
+   "labels": [
+    "dog",
+    "person"
+   ],
+   "file": "d6_driveway_171355.jpg",
+   "thumb": "d6_driveway_171355_t.jpg"
+  },
+  {
+   "offset": 6,
+   "camera": "driveway",
+   "time": "204051",
+   "labels": [
+    "car",
+    "person"
+   ],
+   "file": "d6_driveway_204051.jpg",
+   "thumb": "d6_driveway_204051_t.jpg"
+  },
+  {
+   "offset": 6,
+   "camera": "driveway",
+   "time": "200516",
+   "labels": [],
+   "file": "d6_driveway_200516.jpg",
+   "thumb": "d6_driveway_200516_t.jpg"
+  },
+  {
+   "offset": 6,
+   "camera": "hall",
+   "time": "091225",
+   "labels": [
+    "person"
+   ],
+   "file": "d6_hall_091225.jpg",
+   "thumb": "d6_hall_091225_t.jpg"
+  }
+ ]
+}

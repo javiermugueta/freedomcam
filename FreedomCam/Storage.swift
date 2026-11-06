@@ -52,6 +52,7 @@ struct StorageConfig: Equatable, Codable {
     var bucket = ""
     var accessKeyId = ""
     var secretAccessKey = ""
+    var demo = false               // demo mode: made-up photos inside the app (DemoBucket)
 
     static let jurisdictions = ["default", "eu", "fedramp"]
 
@@ -80,6 +81,7 @@ struct StorageConfig: Equatable, Codable {
         region = try c.decodeIfPresent(String.self, forKey: .region) ?? ""
         endpoint = try c.decodeIfPresent(String.self, forKey: .endpoint) ?? ""
         virtualHost = try c.decodeIfPresent(Bool.self, forKey: .virtualHost) ?? false
+        demo = try c.decodeIfPresent(Bool.self, forKey: .demo) ?? false
         if let p = try c.decodeIfPresent(StorageProvider.self, forKey: .provider) {
             provider = p
         } else {
@@ -120,8 +122,15 @@ struct StorageConfig: Equatable, Codable {
         return c.url
     }
 
+    static let demoConfig = StorageConfig(demo: true)
+
+    init(demo: Bool) {
+        self.init()
+        self.demo = demo
+    }
+
     var isComplete: Bool {
-        baseURL != nil && !bucket.isEmpty && !accessKeyId.isEmpty && !secretAccessKey.isEmpty
+        demo || baseURL != nil && !bucket.isEmpty && !accessKeyId.isEmpty && !secretAccessKey.isEmpty
     }
 
     /// Tidies what was typed or pasted: spaces, an S3 URL pasted with the bucket behind it,
