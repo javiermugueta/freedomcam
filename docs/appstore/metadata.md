@@ -104,7 +104,7 @@ security camera,cctv,surveillance,motion,privacy,nvr,photos,storage,s3,self-host
 
 **What's New** (not shown for the first version; for later updates)
 
-**Screenshots**: `screenshots/iphone-en-*.jpg` (6.9", 1320×2868) and `screenshots/ipad-en-*.jpg` (13", 2064×2752), in order 1 to 5.
+**Screenshots**: `screenshots/iphone63-en-*.jpg` (6.3", 1206×2622), `screenshots/iphone-en-*.jpg` (6.9", 1320×2868) and `screenshots/ipad-en-*.jpg` (13", 2064×2752), in order 1 to 5.
 
 ### Spanish (Spain) — add this localization
 
@@ -155,7 +155,7 @@ Privada por diseño: sin analítica, sin publicidad, sin seguimiento. En españo
 cámara,seguridad,videovigilancia,movimiento,privacidad,fotos,s3,nvr,alarma,casa,cámara ip,vigilancia
 ```
 
-**Capturas**: `screenshots/iphone-es-*.jpg` (6,9") y `screenshots/ipad-es-*.jpg` (13"), en orden del 1 al 5.
+**Capturas**: `screenshots/iphone63-es-*.jpg` (6,3"), `screenshots/iphone-es-*.jpg` (6,9") y `screenshots/ipad-es-*.jpg` (13"), en orden del 1 al 5.
 
 ## App Review information
 
