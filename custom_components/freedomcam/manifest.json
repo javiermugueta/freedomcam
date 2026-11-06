@@ -1,0 +1,19 @@
+{
+  "domain": "freedomcam",
+  "name": "freedomCam",
+  "codeowners": [
+    "@javiermugueta"
+  ],
+  "config_flow": true,
+  "dependencies": [
+    "camera"
+  ],
+  "documentation": "https://github.com/javiermugueta/freedomcam#readme",
+  "integration_type": "service",
+  "iot_class": "cloud_push",
+  "issue_tracker": "https://github.com/javiermugueta/freedomcam/issues",
+  "requirements": [
+    "segno==1.6.6"
+  ],
+  "version": "0.1.0"
+}

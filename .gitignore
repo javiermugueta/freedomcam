@@ -1,0 +1,10 @@
+xcuserdata/
+*.xcuserstate
+DerivedData/
+build/
+.DS_Store
+__pycache__/
+.pytest_cache/
+.venv/
+.ruff_cache/
+FreedomCam.xcodeproj/

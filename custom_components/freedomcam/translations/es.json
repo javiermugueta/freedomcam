@@ -1,0 +1,248 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "¿Dónde se guardarán tus fotos?",
+        "description": "freedomCam guarda las fotos de las cámaras en **tu propio** bucket compatible con S3. Nadie más las ve.\n\nSi aún no tienes almacenamiento, Cloudflare R2 es un buen comienzo: 10 GB gratis y sin coste por descargar las fotos al móvil. Backblaze B2 no pide tarjeta para empezar.",
+        "data": {
+          "provider": "Proveedor de almacenamiento"
+        }
+      },
+      "cloudflare_r2": {
+        "title": "Cloudflare R2",
+        "description": "1. En el panel de Cloudflare abre **R2** (pide una tarjeta aunque uses el plan gratuito) y crea un bucket, p. ej. `freedomcam`.\n2. Copia tu **Account ID** (resumen de R2, columna derecha).\n3. **Manage API tokens → Create API token** con permiso **Object Read & Write** para ese bucket. Copia el *Access Key ID* y el *Secret Access Key* (solo se muestran una vez).\n\nConsejo: un token con **Admin Read & Write** permite además que freedomCam configure la caducidad de las fotos.\n\n[Guía de Cloudflare]({help_url})",
+        "data": {
+          "account_id": "Account ID",
+          "jurisdiction": "Jurisdicción",
+          "bucket": "Nombre del bucket",
+          "access_key_id": "Access Key ID",
+          "secret_access_key": "Secret Access Key"
+        },
+        "data_description": {
+          "jurisdiction": "Cámbiala solo si creaste el bucket en la jurisdicción UE o FedRAMP."
+        }
+      },
+      "aws_s3": {
+        "title": "Amazon S3",
+        "description": "1. Crea un bucket en la región que prefieras.\n2. En IAM crea un usuario con una política que permita `s3:PutObject`, `s3:GetObject`, `s3:DeleteObject` y `s3:ListBucket` en ese bucket (y `s3:PutLifecycleConfiguration` si quieres que freedomCam configure la caducidad).\n3. Crea una **clave de acceso** para ese usuario.\n\n[Guía de AWS]({help_url})",
+        "data": {
+          "region": "Región",
+          "bucket": "Nombre del bucket",
+          "access_key_id": "ID de clave de acceso",
+          "secret_access_key": "Clave de acceso secreta"
+        },
+        "data_description": {
+          "region": "Por ejemplo `eu-south-2` (España), `eu-west-1` o `us-east-1`."
+        }
+      },
+      "backblaze_b2": {
+        "title": "Backblaze B2",
+        "description": "1. Crea un bucket **privado**.\n2. En sus detalles aparece el **endpoint S3**, p. ej. `s3.eu-central-003.backblazeb2.com`: la región es la parte del medio (`eu-central-003`).\n3. **Application Keys → Add a New Application Key**, limitada a ese bucket con acceso *Read and Write*. Copia el *keyID* y la *applicationKey*.\n\n[Guía de Backblaze]({help_url})",
+        "data": {
+          "region": "Región",
+          "bucket": "Nombre del bucket",
+          "access_key_id": "keyID",
+          "secret_access_key": "applicationKey"
+        }
+      },
+      "wasabi": {
+        "title": "Wasabi",
+        "description": "1. Crea un bucket y apunta su región (p. ej. `eu-central-1`).\n2. Crea un usuario con claves de acceso y una política limitada a ese bucket.\n\n[Guía de Wasabi]({help_url})",
+        "data": {
+          "region": "Región",
+          "bucket": "Nombre del bucket",
+          "access_key_id": "Access key",
+          "secret_access_key": "Secret key"
+        }
+      },
+      "other": {
+        "title": "Otro almacenamiento compatible con S3",
+        "description": "MinIO, Garage, un NAS con servicio S3, Scaleway, OVH… Escribe la URL del endpoint de la API S3 (sin el bucket).",
+        "data": {
+          "endpoint": "URL del endpoint",
+          "region": "Región",
+          "virtual_host": "Direccionamiento virtual-hosted (bucket en el nombre del servidor)",
+          "bucket": "Nombre del bucket",
+          "access_key_id": "Access key",
+          "secret_access_key": "Secret key"
+        },
+        "data_description": {
+          "region": "Usa `us-east-1` si tu servicio no usa regiones.",
+          "virtual_host": "Déjalo apagado salvo que tu proveedor exija direcciones `https://bucket.endpoint/`."
+        }
+      },
+      "retention": {
+        "title": "¿Cuánto tiempo se guardan las fotos?",
+        "description": "El propio bucket borra las fotos antiguas (con una regla de ciclo de vida), aunque Home Assistant esté apagado.",
+        "data": {
+          "retention_days": "Guardar las fotos (días, 0 = siempre)",
+          "manage_lifecycle": "Que freedomCam cree la regla en el bucket"
+        },
+        "data_description": {
+          "manage_lifecycle": "Apágalo si tus claves no pueden gestionar el bucket: entonces crea la regla tú en la consola de tu proveedor."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Claves nuevas para {bucket}",
+        "description": "El almacenamiento ha rechazado las claves. Escribe unas nuevas.",
+        "data": {
+          "access_key_id": "ID de clave de acceso",
+          "secret_access_key": "Clave de acceso secreta"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "No se puede conectar con el almacenamiento. Revisa el endpoint, la región y tu conexión.",
+      "invalid_auth": "Las claves no son válidas (revísalas, y también la región).",
+      "access_denied": "Las claves funcionan pero no pueden escribir en este bucket. Dales permiso de lectura y escritura.",
+      "bucket_not_found": "El bucket no existe y estas claves no pueden crearlo. Créalo en la consola de tu proveedor.",
+      "cannot_read": "Las claves pueden escribir pero no leer el bucket. Dales también permiso de lectura.",
+      "lifecycle_denied": "Estas claves no pueden gestionar las reglas del bucket. Apaga la opción y configura la caducidad en la consola de tu proveedor.",
+      "lifecycle_failed": "Este proveedor no ha aceptado la regla de caducidad. Apaga la opción y configúrala en su consola.",
+      "unknown": "Error inesperado. Revisa los registros."
+    },
+    "abort": {
+      "already_configured": "Este bucket ya está configurado.",
+      "reauth_successful": "Claves actualizadas."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opciones de freedomCam",
+        "data": {
+          "presence_entity": "Entidad de «hay alguien en casa»",
+          "pause_seconds": "Tiempo mínimo entre fotos de una cámara",
+          "max_per_hour": "Máximo de fotos por cámara y hora",
+          "sensitivity": "Sensibilidad al movimiento",
+          "thumbnails": "Subir miniaturas (la app gasta menos datos)",
+          "ai_provider": "Detección de objetos",
+          "ai_account_id": "Account ID de Cloudflare",
+          "ai_token": "Token de Cloudflare Workers AI",
+          "ai_min_score": "Confianza mínima",
+          "app_access_key_id": "Clave de acceso de la app (solo lectura)",
+          "app_secret_access_key": "Clave secreta de la app (solo lectura)"
+        },
+        "data_description": {
+          "presence_entity": "Las cámaras marcadas *solo sin nadie en casa* funcionan mientras esta entidad está en `off`, `not_home` o `0` (p. ej. `zone.home`).",
+          "ai_provider": "Añade al nombre de la foto lo que aparece en ella (persona, coche, perro…). Cloudflare Workers AI tiene una cuota diaria gratuita.",
+          "ai_token": "Token con el permiso *Workers AI*.",
+          "app_access_key_id": "Para conectar la app de iOS freedomCam con un código QR: crea claves de **solo lectura** para este bucket y escríbelas aquí. El QR aparece como una entidad de imagen de la integración."
+        }
+      }
+    },
+    "error": {
+      "ai_missing": "Escribe el Account ID y el token para usar Cloudflare Workers AI.",
+      "ai_failed": "Cloudflare Workers AI no ha respondido con estos datos.",
+      "app_keys_incomplete": "Escribe las dos claves de la app, o ninguna.",
+      "app_keys_invalid": "Las claves de la app no pueden leer el bucket.",
+      "app_keys_can_write": "Las claves de la app pueden ESCRIBIR en el bucket. Para el móvil usa claves de solo lectura.",
+      "cannot_connect": "No se puede conectar con el almacenamiento."
+    }
+  },
+  "config_subentries": {
+    "camera": {
+      "entry_type": "Cámara",
+      "initiate_flow": {
+        "user": "Añadir cámara"
+      },
+      "step": {
+        "user": {
+          "title": "Añadir una cámara",
+          "description": "**Imagen** compara cada foto con las anteriores (vale para cualquier cámara). **Sensor de movimiento** hace fotos mientras un sensor binario detecta movimiento (cámaras que avisan de movimiento a Home Assistant).",
+          "data": {
+            "camera_entity": "Cámara",
+            "name": "Nombre",
+            "camera_id": "Carpeta en el bucket (opcional)",
+            "kind": "Ubicación",
+            "mode": "Detección de movimiento",
+            "motion_entity": "Sensor de movimiento",
+            "interval_seconds": "Revisar cada",
+            "only_when_away": "Solo cuando no hay nadie en casa"
+          },
+          "data_description": {
+            "camera_id": "Minúsculas, números, `-` y `_`. Si lo dejas vacío se crea a partir del nombre. No se puede cambiar después.",
+            "interval_seconds": "Solo en el modo *Imagen*."
+          }
+        },
+        "reconfigure": {
+          "title": "Editar cámara",
+          "description": "Carpeta en el bucket: `{camera_id}`.",
+          "data": {
+            "camera_entity": "Cámara",
+            "name": "Nombre",
+            "kind": "Ubicación",
+            "mode": "Detección de movimiento",
+            "motion_entity": "Sensor de movimiento",
+            "interval_seconds": "Revisar cada",
+            "only_when_away": "Solo cuando no hay nadie en casa"
+          }
+        }
+      },
+      "error": {
+        "invalid_camera_id": "Usa minúsculas, números, `-` y `_`, empezando por letra o número.",
+        "camera_id_taken": "Otra cámara ya usa esta carpeta.",
+        "motion_entity_required": "Elige el sensor de movimiento."
+      },
+      "abort": {
+        "reconfigure_successful": "Cámara actualizada."
+      }
+    }
+  },
+  "selector": {
+    "provider": {
+      "options": {
+        "cloudflare_r2": "Cloudflare R2",
+        "aws_s3": "Amazon S3",
+        "backblaze_b2": "Backblaze B2",
+        "wasabi": "Wasabi",
+        "other": "Otro compatible con S3 (MinIO, NAS…)"
+      }
+    },
+    "jurisdiction": {
+      "options": {
+        "default": "Por defecto",
+        "eu": "Unión Europea",
+        "fedramp": "FedRAMP"
+      }
+    },
+    "sensitivity": {
+      "options": {
+        "low": "Baja",
+        "medium": "Media",
+        "high": "Alta"
+      }
+    },
+    "ai_provider": {
+      "options": {
+        "none": "Ninguna",
+        "cloudflare": "Cloudflare Workers AI"
+      }
+    },
+    "kind": {
+      "options": {
+        "outdoor": "Exterior",
+        "indoor": "Interior"
+      }
+    },
+    "mode": {
+      "options": {
+        "image": "Imagen (comparar fotos)",
+        "sensor": "Sensor de movimiento"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "photos_today": {
+        "name": "Fotos de hoy",
+        "unit_of_measurement": "fotos"
+      }
+    },
+    "image": {
+      "app_qr": {
+        "name": "QR para conectar la app"
+      }
+    }
+  }
+}
