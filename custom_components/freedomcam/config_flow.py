@@ -173,7 +173,8 @@ class FreedomCamConfigFlow(ConfigFlow, domain=DOMAIN):
         return self.async_show_form(
             step_id=provider, errors=errors,
             data_schema=self.add_suggested_values_to_schema(_storage_schema(provider), user_input or {}),
-            description_placeholders={"help_url": PROVIDERS[provider].help_url})
+            description_placeholders={"help_url": PROVIDERS[provider].help_url,
+                                      "virtual_host_example": "https://bucket.endpoint/"})
 
     async_step_cloudflare_r2 = async_step_storage
     async_step_aws_s3 = async_step_storage

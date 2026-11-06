@@ -68,7 +68,7 @@
         },
         "data_description": {
           "region": "Use `us-east-1` if your service does not use regions.",
-          "virtual_host": "Leave it off unless your provider requires `https://bucket.endpoint/` URLs."
+          "virtual_host": "Leave it off unless your provider requires `{virtual_host_example}` URLs."
         }
       },
       "retention": {

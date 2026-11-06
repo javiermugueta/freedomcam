@@ -28,6 +28,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
-      - run: pip install pytest-homeassistant-custom-component botocore "moto[server]" segno
+      - run: pip install pytest-homeassistant-custom-component botocore "moto[server]" segno PyTurboJPEG
       - run: pytest
       - run: pytest tests_live -p no:homeassistant -p no:socket

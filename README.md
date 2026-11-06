@@ -53,7 +53,7 @@ Tests: `xcodebuild test -scheme FreedomCam -destination 'platform=iOS Simulator,
 ## Development
 
 ```sh
-uv venv --python 3.13 .venv && uv pip install pytest-homeassistant-custom-component botocore "moto[server]" segno
+uv venv --python 3.13 .venv && uv pip install pytest-homeassistant-custom-component botocore "moto[server]" segno PyTurboJPEG
 .venv/bin/pytest                                            # Home Assistant tests
 .venv/bin/pytest tests_live -p no:homeassistant -p no:socket   # real HTTP against a local S3 emulator
 ```

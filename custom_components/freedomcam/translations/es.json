@@ -68,7 +68,7 @@
         },
         "data_description": {
           "region": "Usa `us-east-1` si tu servicio no usa regiones.",
-          "virtual_host": "Déjalo apagado salvo que tu proveedor exija direcciones `https://bucket.endpoint/`."
+          "virtual_host": "Déjalo apagado salvo que tu proveedor exija direcciones `{virtual_host_example}`."
         }
       },
       "retention": {
