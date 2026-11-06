@@ -45,6 +45,22 @@ struct ContentView: View {
         }
         .task(id: model.selectedDay) { await model.reload() }
         .task(id: model.config) { await model.reload() }
+        #if DEBUG
+        // For screenshots: SIMCTL_CHILD_FC_SCREEN=settings | calendar | viewer
+        .onAppear {
+            switch ProcessInfo.processInfo.environment["FC_SCREEN"] {
+            case "settings": showSettings = true
+            case "calendar": showCalendar = true
+            default: break
+            }
+        }
+        .onChange(of: model.photos) { _, fotos in
+            if ProcessInfo.processInfo.environment["FC_SCREEN"] == "viewer", viewing == nil {
+                let hora = ProcessInfo.processInfo.environment["FC_PHOTO"] ?? ""   // e.g. 14:28
+                viewing = fotos.first { $0.time.hasPrefix(hora) && !$0.labels.isEmpty }
+            }
+        }
+        #endif
     }
 
     private var gallery: some View {

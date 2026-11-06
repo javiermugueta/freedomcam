@@ -12,6 +12,12 @@ phone reads from it.
   📱 **Coming soon to the App Store.** Meanwhile you can build it yourself (see below).
 - **Open format** ([docs/bucket-format.md](docs/bucket-format.md)): any other client can read the bucket.
 
+## Documentation
+
+- 📖 **[User guide](docs/guide.md)**: storage, installation, cameras, options, app, costs and troubleshooting.
+- 🔒 **[Privacy policy](docs/privacy.md)**: freedomCam collects no data.
+- 🪣 [Bucket format](docs/bucket-format.md), for developers of other clients.
+
 ## Storage
 
 Any S3-compatible service: Cloudflare R2, Amazon S3, Backblaze B2, Wasabi, MinIO, a NAS with S3…

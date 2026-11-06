@@ -12,6 +12,12 @@ bucket y tu móvil lee de él.
   📱 **Muy pronto en el App Store.** Mientras tanto puedes compilarla tú mismo (ver más abajo).
 - **Formato abierto** ([docs/bucket-format.es.md](docs/bucket-format.es.md)): cualquier otro cliente puede leer el bucket.
 
+## Documentación
+
+- 📖 **[Guía de uso](docs/guide.es.md)**: almacenamiento, instalación, cámaras, opciones, app, costes y problemas frecuentes.
+- 🔒 **[Política de privacidad](docs/privacy.es.md)**: freedomCam no recoge ningún dato.
+- 🪣 [Formato del bucket](docs/bucket-format.es.md), para quien quiera hacer otros clientes.
+
 ## Almacenamiento
 
 Cualquier servicio compatible con S3: Cloudflare R2, Amazon S3, Backblaze B2, Wasabi, MinIO, un NAS con S3…

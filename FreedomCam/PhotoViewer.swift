@@ -99,7 +99,9 @@ struct ShareButton: View {
     @State private var image: UIImage?
 
     var body: some View {
-        Group {
+        // ZStack with a placeholder: an empty Group would never run the .task that loads the image
+        ZStack {
+            Color.clear.frame(width: 44, height: 44)
             if let image {
                 ShareLink(item: Image(uiImage: image),
                           preview: SharePreview("\(title) \(photo.day) \(photo.time)",
