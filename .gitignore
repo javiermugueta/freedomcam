@@ -8,3 +8,6 @@ __pycache__/
 .venv/
 .ruff_cache/
 FreedomCam.xcodeproj/
+
+# App Store Connect material (kept locally only)
+docs/appstore/
