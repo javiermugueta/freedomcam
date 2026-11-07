@@ -113,11 +113,25 @@ Each camera gets a **Photos today** sensor, with the last photo, its labels and 
 
 ## 7. Connect the iPhone app
 
-1. In *freedomCam → Configure*, enter the **app keys** (the read-only ones). freedomCam checks that they
-   can read and **refuses them if they can write**.
-2. The integration shows a new image, **App connection QR**.
-3. In the app, tap **Scan the code from Home Assistant** and point at the QR. You can also scan it with the
-   iPhone Camera app: it offers to open freedomCam.
+You don't set up the app by hand: Home Assistant hands it the bucket and the **read-only** keys through a QR code.
+
+1. **Give the integration the app keys.** *Settings → Devices & services → freedomCam →* ⚙️ **Configure**. At the
+   bottom are **App access key** and **App secret key**: enter the read-only token (`freedomcam-app` from
+   step 2) and save. freedomCam checks that they can read and **refuses them if they can write**.
+2. **Open the QR.** In the same integration, open the **freedomCam _\<your bucket\>_** device. Its
+   *Configuration* card shows **App connection QR**; tap it to see it full size.
+
+   <img src="images/ha-qr.jpg" width="620" alt="Bucket device in Home Assistant with the App connection QR entity (shown in Spanish)">
+
+   *(Screenshot in Spanish: the highlighted row reads “App connection QR” in English.)* If it isn't there, no app
+   keys are saved yet (go back to point 1).
+3. **Scan it with the iPhone.** In the app tap **Scan the code from Home Assistant** (on the welcome screen or in
+   *Settings*) and point at the screen. The iPhone Camera app works too: it offers to open freedomCam.
+4. The app asks **Connect to this bucket?**, showing the provider and bucket; tap **Connect** and your photos appear.
+
+> 🔒 The QR contains the app keys. They are read-only, but whoever scans it can see your photos: don't share it or
+> post it in screenshots. If it leaks, delete that token at your provider, create a new one and enter it in point 1:
+> the QR updates by itself.
 
 Without Home Assistant at hand, tap **Enter it manually** and fill in the provider, bucket and keys.
 To look around first, **Try the demo** shows a week of made-up photos; *Exit* in its banner goes back.

@@ -112,11 +112,26 @@ Cada cámara tiene un sensor **Fotos de hoy**, con la última foto, sus etiqueta
 
 ## 7. Conectar la app del iPhone
 
-1. En *freedomCam → Configurar*, escribe las **claves de la app** (las de solo lectura). freedomCam comprueba que
-   pueden leer y **las rechaza si pueden escribir**.
-2. La integración muestra una imagen nueva, **QR para conectar la app**.
-3. En la app, toca **Escanear el código de Home Assistant** y apunta al QR. También puedes leerlo con la app
-   Cámara del iPhone: te ofrecerá abrir freedomCam.
+La app no se configura a mano: Home Assistant le pasa el bucket y las claves de **solo lectura** con un código QR.
+
+1. **Dale a la integración las claves de la app.** *Ajustes → Dispositivos y servicios → freedomCam →*
+   ⚙️ **Configurar**. Al final están **Clave de acceso de la app** y **Clave secreta
+   de la app**: escribe las del
+   token de solo lectura (`freedomcam-app` del paso 2) y guarda. freedomCam comprueba que pueden leer y **las rechaza
+   si pueden escribir**.
+2. **Abre el QR.** En la misma integración entra en el dispositivo **freedomCam _\<tu bucket\>_**. En la tarjeta
+   *Configuración* aparece **QR para conectar la app**; tócalo para verlo en grande.
+
+   <img src="images/ha-qr.jpg" width="620" alt="Dispositivo del bucket en Home Assistant con la entidad «QR para conectar la app»">
+
+   Si no aparece, es que no hay claves de la app guardadas (vuelve al punto 1).
+3. **Escanéalo desde el iPhone.** En la app toca **Escanear el código de Home Assistant** (en la bienvenida o en
+   *Ajustes*) y apunta a la pantalla. También vale la app Cámara del iPhone: te ofrecerá abrir freedomCam.
+4. La app pregunta **¿Conectar con este bucket?** con el proveedor y el bucket; toca **Conectar** y aparecen tus fotos.
+
+> 🔒 El QR contiene las claves de la app. Son de solo lectura, pero quien lo escanee podrá ver tus fotos:
+> no lo compartas ni lo publiques en capturas. Si se filtra, borra ese token en tu proveedor, crea otro y
+> escríbelo en el punto 1: el QR cambia solo.
 
 Si no tienes Home Assistant a mano, toca **Escribirlo a mano** y rellena proveedor, bucket y claves.
 Para curiosear antes, **Probar la demo** enseña una semana de fotos inventadas; *Salir* en su aviso te devuelve al inicio.
