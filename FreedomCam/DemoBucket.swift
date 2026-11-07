@@ -36,8 +36,19 @@ enum DemoBucket {
 
     private enum Content { case bundled(String), json(Data) }
 
+    /// Current time; DEBUG builds accept SIMCTL_CHILD_FC_TIME=HH:MM so screenshots taken at night still show today's photos.
+    private static var clock: Date {
+        #if DEBUG
+        if let t = ProcessInfo.processInfo.environment["FC_TIME"]?.split(separator: ":").compactMap({ Int($0) }), t.count == 2,
+           let fecha = Calendar.current.date(bySettingHour: t[0], minute: t[1], second: 0, of: Date()) {
+            return fecha
+        }
+        #endif
+        return Date()
+    }
+
     /// Bucket contents for "now": key -> bundled file (photos and thumbnails) or generated JSON.
-    private static func contents(now: Date = Date()) -> [String: Content] {
+    private static func contents(now: Date = clock) -> [String: Content] {
         guard let file else { return [:] }
         let cal = Calendar.current
         let hoy = cal.startOfDay(for: now)
@@ -80,7 +91,7 @@ enum DemoBucket {
         .json((try? JSONSerialization.data(withJSONObject: value)) ?? Data())
     }
 
-    static func object(key: String, now: Date = Date()) throws -> Data {
+    static func object(key: String, now: Date = clock) throws -> Data {
         switch contents(now: now)[key] {
         case let .json(data): return data
         case let .bundled(name):
@@ -90,7 +101,7 @@ enum DemoBucket {
         }
     }
 
-    static func list(prefix: String, delimiter: String?, now: Date = Date()) -> ListResult {
+    static func list(prefix: String, delimiter: String?, now: Date = clock) -> ListResult {
         let keys = contents(now: now).keys.filter { $0.hasPrefix(prefix) }.sorted()
         guard let delimiter else { return ListResult(keys: keys, prefixes: []) }
         var resultado = ListResult()
