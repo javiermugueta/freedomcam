@@ -82,6 +82,18 @@ struct SettingsView: View {
                     Text("🧹 Space")
                 }
 
+                Section {
+                    Link(destination: Self.docURL("guide")) {
+                        Label("User guide", systemImage: "book")
+                    }
+                    Link(destination: Self.docURL("privacy")) {
+                        Label("Privacy policy", systemImage: "hand.raised")
+                    }
+                    LabeledContent("Version", value: Self.version)
+                } header: {
+                    Text("ℹ️ Help")
+                }
+
                 if model.config.isComplete {
                     Section {
                         Button("Forget this connection", role: .destructive) {
@@ -173,5 +185,18 @@ struct SettingsView: View {
         } catch {
             result = .failure(error)
         }
+    }
+}
+
+extension SettingsView {
+    /// Page under docs/ on GitHub, in Spanish when the app is shown in Spanish.
+    static func docURL(_ page: String) -> URL {
+        let es = Bundle.main.preferredLocalizations.first == "es"
+        return URL(string: "https://github.com/javiermugueta/freedomcam/blob/main/docs/\(page)\(es ? ".es" : "").md")!
+    }
+
+    static var version: String {
+        let info = Bundle.main.infoDictionary
+        return "\(info?["CFBundleShortVersionString"] as? String ?? "?") (\(info?["CFBundleVersion"] as? String ?? "?"))"
     }
 }
