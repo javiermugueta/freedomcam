@@ -25,17 +25,17 @@ _index/<AAAA>/<MM>.json                            resumen del mes (opcional)
 
 ### Etiquetas
 
-| Etiqueta     | Significado                | Alias antiguo (solo lectura) |
-|--------------|----------------------------|------------------------------|
-| `person`     | persona                    | `persona`                    |
-| `car`        | coche, camión o autobús    | `coche`                      |
-| `motorcycle` | moto                       | `moto`                       |
-| `bicycle`    | bicicleta                  | `bici`                       |
-| `dog`        | perro                      | `perro`                      |
-| `cat`        | gato                       | `gato`                       |
+| Etiqueta     | Significado                |
+|--------------|----------------------------|
+| `person`     | persona                    |
+| `car`        | coche, camión o autobús    |
+| `motorcycle` | moto                       |
+| `bicycle`    | bicicleta                  |
+| `dog`        | perro                      |
+| `cat`        | gato                       |
 
 Las etiquetas se escriben siempre en inglés y los clientes las traducen. Los clientes deben ignorar las
-etiquetas que no conozcan y aceptar los alias antiguos, usados en buckets anteriores a la versión 1.
+etiquetas que no conozcan.
 
 ## `freedomcam.json`
 

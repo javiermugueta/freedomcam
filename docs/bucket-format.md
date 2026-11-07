@@ -25,17 +25,16 @@ _index/<YYYY>/<MM>.json                           month summary (optional)
 
 ### Labels
 
-| Label        | Meaning                    | Legacy alias (read only) |
-|--------------|----------------------------|--------------------------|
-| `person`     | person                     | `persona`                |
-| `car`        | car, truck or bus          | `coche`                  |
-| `motorcycle` | motorcycle                 | `moto`                   |
-| `bicycle`    | bicycle                    | `bici`                   |
-| `dog`        | dog                        | `perro`                  |
-| `cat`        | cat                        | `gato`                   |
+| Label        | Meaning                    |
+|--------------|----------------------------|
+| `person`     | person                     |
+| `car`        | car, truck or bus          |
+| `motorcycle` | motorcycle                 |
+| `bicycle`    | bicycle                    |
+| `dog`        | dog                        |
+| `cat`        | cat                        |
 
-Labels are always written in English; clients translate them. Clients must ignore unknown labels and
-should accept the legacy aliases, used by buckets created before version 1.
+Labels are always written in English; clients translate them. Clients must ignore unknown labels.
 
 ## `freedomcam.json`
 
