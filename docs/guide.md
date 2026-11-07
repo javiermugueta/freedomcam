@@ -143,7 +143,9 @@ To look around first, **Try the demo** shows a week of made-up photos; *Exit* in
 
 ## 9. Costs
 
-freedomCam is free. You only pay your storage provider, if you go over its free tier:
+The Home Assistant integration is free and open source. The iOS app costs 0.99 USD on the App Store (a one-time
+purchase: no subscription and no in-app purchases). Apart from that, you only pay your storage provider, if you go
+over its free tier:
 
 - **Cloudflare R2**: 10 GB stored, 1 million writes and 10 million reads per month for free; downloads are
   free. A photo is usually 100–300 KB, so 30 days of a few hundred photos a day fit easily.

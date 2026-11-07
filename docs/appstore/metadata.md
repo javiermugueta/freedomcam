@@ -27,7 +27,7 @@ Screenshots are in [`screenshots/`](screenshots/).
 | Secondary category | Photo & Video |
 | Content rights | Does not contain, show or access third-party content |
 | Age rating | 4+ (answer *None* to every question; no unrestricted web access) |
-| Price | Free |
+| Price | 0.99 USD (paid app, no in-app purchases) |
 | Availability | All countries and regions |
 
 ### URLs
