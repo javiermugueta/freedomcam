@@ -9,7 +9,7 @@ bucket y tu móvil lee de él.
 - **Integración de Home Assistant** (este repositorio, se instala con HACS): vigila las cámaras, guarda una
   foto cuando algo se mueve y, si quieres, le pone en el nombre lo que ve (`181502_car-person.jpg`).
 - **App de iOS** (`FreedomCam/`): fotos por día y cámara, con filtros de personas, vehículos o animales.
-  📱 **Muy pronto en el App Store.** Mientras tanto puedes compilarla tú mismo (ver más abajo).
+  📱 **[Descárgala en el App Store](https://apps.apple.com/app/freedomcam/id6831813216)** (0,99 €, pago único). También puedes compilarla tú mismo (ver más abajo).
 - **Formato abierto** ([docs/bucket-format.es.md](docs/bucket-format.es.md)): cualquier otro cliente puede leer el bucket.
 
 ## Documentación
@@ -48,7 +48,7 @@ Requiere Home Assistant 2025.6 o posterior.
 
 ## App de iOS
 
-La app estará pronto en el App Store. Hasta entonces, compílala con Xcode:
+Descárgala en el [App Store](https://apps.apple.com/app/freedomcam/id6831813216) o compílala tú mismo con Xcode:
 
 ```sh
 xcodegen generate

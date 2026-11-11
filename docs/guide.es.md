@@ -26,7 +26,7 @@ cámaras ──► Home Assistant + freedomCam ──► tu bucket S3 ◄── 
 - **Home Assistant** 2025.6 o posterior, con tus cámaras ya añadidas (vale cualquier entidad `camera.*`).
 - **Almacenamiento compatible con S3**: Cloudflare R2, Amazon S3, Backblaze B2, Wasabi o el tuyo propio (MinIO, un NAS…).
 - **HACS** para instalar la integración.
-- Un **iPhone** con iOS 17 o posterior para la app. 📱 *La app estará muy pronto en el App Store.*
+- Un **iPhone** con iOS 17 o posterior para la app. 📱 [Descárgala en el App Store](https://apps.apple.com/app/freedomcam/id6831813216).
 
 ## 2. Crear el almacenamiento
 

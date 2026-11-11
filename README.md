@@ -9,7 +9,7 @@ phone reads from it.
 - **Home Assistant integration** (this repository, installable with HACS): watches your cameras, saves a
   photo when something moves and, optionally, names it after what it sees (`181502_car-person.jpg`).
 - **iOS app** (`FreedomCam/`): browse photos by day and camera, filter by people, vehicles or animals.
-  📱 **Coming soon to the App Store.** Meanwhile you can build it yourself (see below).
+  📱 **[Download on the App Store](https://apps.apple.com/app/freedomcam/id6831813216)** (0.99 USD, one-time). You can also build it yourself (see below).
 - **Open format** ([docs/bucket-format.md](docs/bucket-format.md)): any other client can read the bucket.
 
 ## Documentation
@@ -49,7 +49,7 @@ Requires Home Assistant 2025.6 or newer.
 
 ## iOS app
 
-The app will be available on the App Store soon. Until then, build it with Xcode:
+Get it on the [App Store](https://apps.apple.com/app/freedomcam/id6831813216), or build it yourself with Xcode:
 
 ```sh
 xcodegen generate
